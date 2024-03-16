@@ -1,0 +1,193 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+      <script>
+        document.addEventListener( 'DOMContentLoaded', function () {
+          new Splide( '#image-carousel' ).mount();
+        } );
+      </script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+        <title>ЧОО "ББЛ" | Главная</title>
+        <link rel="icon" href="/media/Logo.svg"  type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'libs/bootstrap-reboot.min.css'%}">
+        <link rel="stylesheet" href="{% static 'libs/bootstrap-grid.min.css'%}">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/styles.css'%}">
+        <script src="{% static 'js/scripts.js'%}"></script>
+    </head>
+    <body>
+
+      <div id="popup1" class="overlay">
+        <div class="popup">
+          <a class="close1" href="#">&times;</a>
+          <div class="content">
+            <span class="popup_head_text">Заказать звонок<br></span>
+            <span class="popup_sub_text">Оставьте заявку и мы свяжемся с Вами в ближайшее время!<br></span>
+            <input class="popup_input" placeholder="Имя" type="text"><br>
+            <input class="popup_input" placeholder="Телефон" type="tel"><br>
+            <input class="popup_input" placeholder="Email(необязательно)" type="text"><br>
+            <span>Указывая свой почтовый адрес, я подтверждаю, что хочу получать рекламные предложения.<br></span>
+            <button class="popup_submite" type="submit">Отправить</button>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="header_cont">
+          <div class="m_cont">
+            <div class="head_m_icon">
+              <a href="#"><img id="head_cont_icon" class="head_icon"src="{% static '/images/tg_white.svg' %}"/></a>
+              <a href="#"><img id="head_cont_icon" src="{% static '/images/wats_white.svg' %}" /></a>
+            </div>
+            <div class="head_m_phone">
+              <a id="p_tele" href="tel:88000000000">+7(900) 000 00-00</a>
+            </div>
+          </div>
+            <div class="cont">
+                <div class="logo">
+                    <a href="#"><img src="{% static '/images/Logo.svg' %}" alt="Logo"/></a>
+                </div>
+            <div class="navbar-wrap">
+              <ul class="menu">
+                <li><a id="menu_item" href="/">Главная</a></li>
+                <div class="dropdown">
+                  <li><a id="menu_item" class="down" href="/service">Услуги</a></li>
+                  <div class="dropdown-content">
+                    <ul>
+                      <li><a href="/phy_sec">Физическая охрана</a></li>
+                      <hr id="hr_menu">
+                      <li><a href="/video_sec">Видео охрана</a></li>
+                      <hr id="hr_menu">
+                      <li><a href="/radio_sec">Радио охрана</a></li>
+                      <hr id="hr_menu">
+                      <li><a href="/cargo_sec">Сопровождение грузов</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="dropdown">
+                  <li><a id="menu_item" href="/about">О компании</a></li>
+                  <div class="dropdown-content">
+                    <ul>
+                      <li><a href="/portfolio">Наши проекты</a></li>
+                    </ul>
+                  </div>
+                </div>
+                  <li><a id="menu_item" href="/contacts">Контакты</a></li>
+                  <li><a id="menu_item" href="/vacancies">Вакансии</a></li>
+                </ul>
+            </div>
+            <div class="contacts">
+                <div class="messagners">
+                    <a href="#"><img id="head_cont_icon" class="head_icon"src="{% static '/images/tg.svg' %}"/></a>
+                    <a href="#"><img id="head_cont_icon" src="{% static '/images/wh.svg' %}"/></a>
+                </div>
+                <div class="tel_number">
+                    Пн-Пт с 8:00 до 18:00<br>
+                    Сб с 8:00 до 15:00<br>
+                    <a href="tel:88000000000">+7(900) 000 00-00</a>
+                </div>
+                <a href="#popup1" class="callback">Обратный звонок</a>
+            </div>
+            <div id="mySidepanel" class="sidepanel">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+              <ul class="menu">
+                <li><a id="menu_item" href="/">Главная</a></li>
+                <li><a id="menu_item" href="/templates/services">Услуги</a></li>
+                <li><a id="menu_item" href="/about">О компании</a></li>
+                <li><a id="menu_item" href="/contacts">Контакты</a></li>
+                <li><a id="menu_item" href="/vacancies">Вакансии</a></li>
+              </ul>
+            </div>
+            <button class="openbtn" onclick="openNav()">&#9776;</button>
+        </div>
+      </div>
+
+
+    <div class="stuff_container">
+        <div class="ser_p">
+          <h1 id="services">Услуги</h1>
+          <div class="card-container">
+            <div class="card" style="cursor: pointer;" onclick="window.location='/phy_sec';">
+              <div class="card-content">
+                <h2 class="card-title">Физическая охрана объектов</h2>
+                <p class="card-description">Предоставляем услуги посуточной или почасовой охраны объектов</p>
+              </div>
+              <img id="phy_img" src="{% static '/images/phy.jpg' %}" alt="Category Three" class="card-image">
+            </div>
+            <div class="card" style="cursor: pointer;" onclick="window.location='/video_sec';">
+              <div class="card-content">
+                <h2 class="card-title">Монтаж и обслуживание систем видеонаблюдения</h2>
+                <p class="card-description">Помогаем следить за вашими объектами 24/7</p>
+              </div>
+              <img id="cam_img" src="{% static '/images/cam.png' %}" alt="Category Three" class="card-image">
+            </div>
+            <div class="card" style="cursor: pointer;" onclick="window.location='/radio_sec';">
+              <div class="card-content">
+                <h2 class="card-title">Монтаж и обслуживание систем радиоохраны</h2>
+                <p class="card-description">Предоставляем услуги посуточной или почасовой охраны объектов</p>
+              </div>
+              <img src="{% static '/images/radio.png' %}" alt="Category Three" class="card-image">
+            </div>
+            <div class="card" style="cursor: pointer;" onclick="window.location='/cargo_sec';">
+              <div class="card-content">
+                <h2 class="card-title">Сопровождение грузов</h2>
+                <p class="card-description">Предоставляем услуги посуточной или почасовой охраны объектов</p>
+              </div>
+              <img src="{% static '/images/protected_3180118.png' %}" alt="Category Foure" class="card-image">
+            </div>
+          </div>
+
+    <footer>
+        <div class="logo-block">
+          <img src="/media/Logo.svg" alt="Логотип">
+          <p id="footer_text_address">Адрес:</p>
+          <p id="footer_text_address">город Екатеринбург, Елизаветинское шоссе, д. 29</p>
+          <p id="footer_text_address">Контакты:</p>
+          <p id="footer_text_address">+7(900) 000 00-00</p>
+          <p id="footer_text_address1">boss@chopbbl.ru</p>
+          <a href="#" class="callback_footer">Оставить заявку</a>
+        </div>
+        <div class="footer_nemu">
+            <div id="footer_text_naw" class="info-block">
+                <h3 id="h_info">Каталог сайта</h3>
+                <div class="info_naw">
+                    <a href="#" id="info_naw_item">Главная <br></a>
+                    <a href="#" id="info_naw_item">Услуги <br></a>
+                    <a href="#" id="info_naw_item">О нас <br></a>
+                    <a href="#" id="info_naw_item">Вакансии</a> 
+                </div>
+            </div>
+            <div id="footer_text_naw" class="info-block">
+                <h3 id="h_info">Наши соц. сети</h3>
+                <div class="info_naw">
+                  <a href="#" id="info_naw_item">Вконтакте</a>
+              </div>
+            </div>
+            <div id="footer_text_naw" class="info-block">
+                <h3 id="h_info">Наши соц. сети</h3>
+                <div class="info_naw">
+                  <a href="#" id="info_naw_item">Whats'app<br></a>
+                  <a href="#" id="info_naw_item">Telegram<br></a>
+              </div>
+            </div>
+        </div>
+        <hr>
+        <div class="footer-bottom">
+          <p id="footer_text">© 2023 ООО ЧОО «ББЛ». Все права защищены.</p>
+          <div class="footer_right_bottom_text">
+            <p id="footer_text_bot"> <a class="href_footer" href="#">Политика конфиденциальности</a></p>
+            <p id="footer_text_bot"> <a class="href_footer" href="#">Условия пользования</a></p>
+            <p id="footer_text_bot"> <a class="href_footer" href="#">Настройки куки</a></p>
+          </div>
+        </div>
+      </footer>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+</html>
