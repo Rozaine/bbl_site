@@ -20,24 +20,34 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{% static 'css/styles.css'%}">
-        <script src="{% static 'js/scripts.js'%}"></script>
     </head>
     <body>
 
-      <div id="popup1" class="overlay">
-        <div class="popup">
-          <a class="close1" href="#">&times;</a>
+      <div class="popup1">
+        <div class="popup" >
+          <span class="close1" style="cursor: pointer;">&times;</span>
           <div class="content">
             <span class="popup_head_text">Заказать звонок<br></span>
             <span class="popup_sub_text">Оставьте заявку и мы свяжемся с Вами в ближайшее время!<br></span>
-            <input class="popup_input" placeholder="Имя" type="text"><br>
-            <input class="popup_input" placeholder="Телефон" type="tel"><br>
-            <input class="popup_input" placeholder="Email(необязательно)" type="text"><br>
-            <span>Указывая свой почтовый адрес, я подтверждаю, что хочу получать рекламные предложения.<br></span>
-            <button class="popup_submite" type="submit">Отправить</button>
+            <form enctype="multipart/form-data" method="post">
+              {% csrf_token %}
+              {{ form }}
+              
+              <!-- 
+              <input class="popup_input" placeholder="Имя" type="text" value="{{ name }}"><br>
+              <input class="popup_input" placeholder="Телефон" type="tel" value="{{ service }}"><br>
+              <input class="popup_input" placeholder="Email(необязательно) value="{{ tel_number }}"" type="text"><br>
+              <input class="popup_input" placeholder="Email(необязательно) value="{{ email }}"" type="text"><br>
+              -->
+
+              <span>* Указывая свой почтовый адрес, я подтверждаю, что хочу получать рекламные предложения.<br></span>
+              <button class="popup_submite" type="submit">Отправить</button>
+            </form>
           </div>
         </div>
+        <div class="overlay"></div>
       </div>
+      <div>
 
       <div>
         <div class="header_cont">
@@ -93,13 +103,15 @@
                     Сб с 8:00 до 15:00<br>
                     <a href="tel:88000000000">+7(900) 000 00-00</a>
                 </div>
-                <a href="#popup1" class="callback">Обратный звонок</a>
+                <button class="callback" id="callback" style="vertical-align:middle">
+                  <span id="btn_span">Заказать звонок</span>
+                </button>
             </div>
             <div id="mySidepanel" class="sidepanel">
               <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
               <ul class="menu">
                 <li><a id="menu_item" href="/">Главная</a></li>
-                <li><a id="menu_item" href="/templates/services">Услуги</a></li>
+                <li><a id="menu_item" href="/service">Услуги</a></li>
                 <li><a id="menu_item" href="/about">О компании</a></li>
                 <li><a id="menu_item" href="/contacts">Контакты</a></li>
                 <li><a id="menu_item" href="/vacancies">Вакансии</a></li>
@@ -207,5 +219,6 @@
   </div>
 </footer>
 </body>
+<script src="{% static 'js/scripts.js'%}"></script>
 <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
 </html>

@@ -33,7 +33,9 @@
   outline-offset: 3px;
   transition: background-color .2s ease-in-out, color .2s ease-in-out;
 }
-
+.side-image {
+  width: 600px;
+}
 .section__button:hover {
   background-color: #fff;
   color: #000;
@@ -295,7 +297,6 @@ padding: 1vw;
   text-align: center;
   font-size: 1vw;
   padding: 12px 22px;
-  width: 200px;
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;
@@ -565,7 +566,7 @@ padding: 1vw;
 }
 
 .container_about {
-    max-width: 1300px;
+    max-width: 80%;
     flex-direction: column;
   }
   .text-with-image {
@@ -1083,7 +1084,7 @@ padding: 1vw;
 
 #hr_menu{
   margin: 0;
-  opacity: .2;
+  opacity: .07;
 }
 
 /* Кнопка выпадающего списка */
@@ -1106,7 +1107,7 @@ padding: 1vw;
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
+  background-color: #ffffff;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 11;
@@ -1119,14 +1120,38 @@ padding: 1vw;
   display: block;
 }
 
-/* Изменение цвета выпадающих ссылок при наведении курсора */
-.dropdown-content a:hover {font-size: 1.2vw; }
 
+
+/* Изменение цвета выпадающих ссылок при наведении курсора 
+.dropdown-content a:hover {font-size: 1.2vw; }
+*/
 /* Показать выпадающее меню при наведении курсора */
 .dropdown:hover .dropdown-content {display: block;}
 
-/* Изменение цвета фона кнопки раскрывающегося списка при отображении содержимого раскрывающегося списка */
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
+.dropdown-content a {
+  color: #000;
+  position: relative;
+  text-decoration: none;
+}
+
+.dropdown-content a::before {
+  background: hsl(219, 81%, 59%);
+  content: "";
+  inset: 0;
+  position: absolute;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease-in-out;
+  z-index: -1;
+}
+
+.dropdown-content a:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+
+
 
 .prev {
   left: 0;
@@ -1177,6 +1202,7 @@ padding: 1vw;
   margin-left: auto;
   margin-right: auto;
   gap: 20px;
+  transition:.2s all;
 }
 
 .card {
@@ -1188,6 +1214,7 @@ padding: 1vw;
   height: 225px;
   border-radius: 10px;
   margin-bottom: 20px;
+  transition:.2s all;
 }
 
 .card-content {
@@ -1225,8 +1252,17 @@ padding: 1vw;
   margin-right: auto;
 }
 
-.phy_card {
-
+.card-container:hover .card{
+  filter:blur(0.2px);
+  opacity:.5;
+  transform: scale(.98);
+  box-shadow:none;
+}
+.card-container:hover .card:hover{
+  transform:scale(1);
+  filter:blur(0px);
+  opacity:1;
+  box-shadow:0 8px 20px 0px rgba(0,0,0,0.125);
 }
 
 #phy_card_head {
@@ -1255,7 +1291,6 @@ padding: 1vw;
 #phy_card_disc {
   margin-top: 14px;
   display: flex;
-  width: 65%;
   font-size: 20px;
 }
 
@@ -1270,6 +1305,7 @@ padding: 1vw;
   font-size: 24px;
   float: right;
   margin-bottom: 24px;
+  margin-top: 12px;
 }
 
 .serv_cont {
@@ -1416,6 +1452,7 @@ padding: 1vw;
     width: 80%;
     display:grid;
   }
+
   .footer_nemu{
     display: block;
   }
@@ -1424,7 +1461,7 @@ padding: 1vw;
   }
   .side-image {
     align-items: center;
-    margin: 20px auto;
+    margin: 120px auto;
   }
   #head_cont_icon {
     width: 100%;

@@ -19,39 +19,114 @@ def index(request):
 
 
 def about(request):
-    return render(request, "about.html")
+    userform = TicketForm()
+    form = TicketForm(request.POST)
+    if request.method == "POST":
+        if form.is_valid():
+            form.save()
+            return redirect('/succsess')
+        return render(request, "about.html", {"form": userform})
+    else:
+        return render(request, "about.html", {"form": userform})
 
 
 def service(request):
-    return render(request, "services.html")
+    userform = TicketForm()
+    form = TicketForm(request.POST)
+    if request.method == "POST":
+        if form.is_valid():
+            form.save()
+            return redirect('/succsess')
+        return render(request, "services.html", {"form": userform})
+    else:
+        return render(request, "services.html", {"form": userform})
 
 
 def phy_sec(request):
-    return render(request, "physical_security.html")
+    userform = TicketForm()
+    form = TicketForm(request.POST)
+    if request.method == "POST":
+        if form.is_valid():
+            form.save()
+            return redirect('/succsess')
+        return render(request, "physical_security.html", {"form": userform})
+    else:
+        return render(request, "physical_security.html", {"form": userform})
 
 
 def video_sec(request):
-    return render(request, "video_ser.html")
+    userform = TicketForm()
+    form = TicketForm(request.POST)
+    if request.method == "POST":
+        if form.is_valid():
+            form.save()
+            return redirect('/succsess')
+        return render(request, "video_ser.html", {"form": userform})
+    else:
+        return render(request, "video_ser.html", {"form": userform})
+
 
 
 def radio_sec(request):
-    return render(request, "radio_ser.html")
+    userform = TicketForm()
+    form = TicketForm(request.POST)
+    if request.method == "POST":
+        if form.is_valid():
+            form.save()
+            return redirect('/succsess')
+        return render(request, "radio_ser.html", {"form": userform})
+    else:
+        return render(request, "radio_ser.html", {"form": userform})
+
 
 
 def cargo_sec(request):
-    return render(request, "cargo.html")
+    userform = TicketForm()
+    form = TicketForm(request.POST)
+    if request.method == "POST":
+        if form.is_valid():
+            form.save()
+            return redirect('/succsess')
+        return render(request, "cargo.html", {"form": userform})
+    else:
+        return render(request, "cargo.html", {"form": userform})
 
 
 def portfolio(request):
-    return render(request, "projects.html")
+    userform = TicketForm()
+    form = TicketForm(request.POST)
+    if request.method == "POST":
+        if form.is_valid():
+            form.save()
+            return redirect('/succsess')
+        return render(request, "projects.html", {"form": userform})
+    else:
+        return render(request, "projects.html", {"form": userform})
 
 
 def contacts(request):
-    return render(request, "contacts.html")
+    userform = TicketForm()
+    form = TicketForm(request.POST)
+    if request.method == "POST":
+        if form.is_valid():
+            form.save()
+            return redirect('/succsess')
+        return render(request, "contacts.html", {"form": userform})
+    else:
+        return render(request, "contacts.html", {"form": userform})
 
 
 def vacancies(request):
-    return render(request, "vacancies.html")
+    userform = TicketForm()
+    form = TicketForm(request.POST)
+    if request.method == "POST":
+        if form.is_valid():
+            form.save()
+            return redirect('/succsess')
+        return render(request, "vacancies.html", {"form": userform})
+    else:
+        return render(request, "vacancies.html", {"form": userform})
+
 
 def succsess(request):
     return render(request, "succsess.html")
